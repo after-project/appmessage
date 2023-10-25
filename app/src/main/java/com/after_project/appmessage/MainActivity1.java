@@ -18,7 +18,7 @@ public class MainActivity1 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main1);
 
-        setTitle(this.className);
+        setTitle("App Message - "+this.className);
 
         //Click Button - Open MainActivity2
         Button buttonOpenMainActivty2 = (Button) findViewById(R.id.ButtonOpenMainActivty2);

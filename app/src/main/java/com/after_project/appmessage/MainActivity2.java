@@ -16,7 +16,7 @@ public class MainActivity2 extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main2);
 
-        setTitle(this.className);
+        setTitle("App Message - "+this.className);
 
 
         //Click Button - App Message To MainActivity1
