@@ -1,6 +1,9 @@
 # App Message
 App Message for Android is a part of [**Web App Api for android easier request your Api and supports for using (CORS)**](https://github.com/thiagoschnell/webappapi).
 
+## License
+This repository is available under the [MIT License](https://github.com/after-project/appmessage/blob/main/LICENSE).
+
 ## Examples
 
 
