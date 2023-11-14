@@ -1,12 +1,10 @@
 // Copyright (c) Thiago Schnell.
 // Licensed under the MIT License.
 package com.after_project.appmessage;
-
 import android.content.BroadcastReceiver;
 import android.content.Context;
 import android.content.Intent;
 import android.content.IntentFilter;
-
 import androidx.localbroadcastmanager.content.LocalBroadcastManager;
 public class AppMessage {
     private Context mContext;
@@ -17,14 +15,16 @@ public class AppMessage {
         //Unregister a previously registered BroadcastReceiver. All filters that have been registered for this BroadcastReceiver will be removed.
         LocalBroadcastManager.getInstance(mContext).unregisterReceiver(receiver);
     }
+    private String action(String action){
+        return String.format("%s.APP_MESSAGE_%s",BuildConfig.APPLICATION_ID,action.toUpperCase());
+    }
     void registerReceiver( String receiverName, BroadcastReceiver receiver){
         // Register a receive for any local broadcasts that match the given IntentFilter.
         LocalBroadcastManager.getInstance(mContext)
-                .registerReceiver(receiver, new IntentFilter(receiverName));
+                .registerReceiver(receiver, new IntentFilter(action(receiverName)));
     }
-
     private void send(String receiverName, int param, String event, String data, Boolean sync){
-        Intent intent = new Intent(receiverName);
+        Intent intent = new Intent(action(receiverName));
         intent.putExtra("param", param);
         intent.putExtra("event", event);
         intent.putExtra("data", data);

@@ -51,7 +51,7 @@ public class MainActivity2 extends AppCompatActivity {
 
             // in this example to call registerReceiver we go use the first param "receiverName" with same class name of activity.
             //this garantes that you will go handle the message successfully.
-            appMessage.registerReceiver( MainActivity2.className , mainActivity2AppMessageReceiver.receiver );
+            appMessage.registerReceiver( MainActivity2.className , mainActivity2AppMessageReceiver);
         }
 
 
@@ -86,7 +86,7 @@ public class MainActivity2 extends AppCompatActivity {
              * Unregister a previously registered BroadcastReceiver.
              * All filters that have been registered for this BroadcastReceiver will be removed.
              */
-            appMessage.unregisterReceiver(mainActivity2AppMessageReceiver.receiver);
+            appMessage.unregisterReceiver(mainActivity2AppMessageReceiver);
         }
     }
 
